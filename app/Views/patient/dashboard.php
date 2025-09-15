@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DocSlot</title>
-    <link rel="stylsheet" href="<?= base_url('css/output.css')?>"/>
+    <title>Dashboar</title>
 </head>
 <body>
-<p>Hello</p>
+    <p>Bienvenu dans dashboard</p>
 </body>
 </html>

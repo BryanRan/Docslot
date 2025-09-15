@@ -21,6 +21,11 @@ class CreateUsersTable extends Migration
                 'constraint' => '100',
                 'null'       => false,
             ],
+            'prenom' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+                'null'       => false, 
+            ],
             'email' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
@@ -46,6 +51,7 @@ class CreateUsersTable extends Migration
         // Insertion d'un admin par défaut
         $data = [
             'nom' => 'Admin',
+            'prenom' => 'Bryan',
             'email' => 'administrator@gmail.com',
             'mot_de_passe' => password_hash('admin12345', PASSWORD_DEFAULT),
             'role' => 'admin'
