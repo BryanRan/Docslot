@@ -9,6 +9,8 @@ class DashboardController extends BaseController
 {
     public function dashboard()
     {
-        return view('patient/dashboard');
+        return view('patient/dashboard', [
+            'title' => 'Dashboard'
+        ]);
     }
 }

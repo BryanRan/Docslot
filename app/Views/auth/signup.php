@@ -36,48 +36,83 @@
         <script src="<?= base_url('js/alert.js') ?>"></script>
     <?php endif; ?>
 
-    <div class="w-full mx-52 rounded-lg bg-white p-8 flex justify-between">
+    <div class="w-full mx-44 rounded-lg bg-white p-8 flex justify-between">
         <!-- Form -->
-        <div class="h-[32rem] w-[23rem]">
+        <div class="h-[32rem] w-[25rem]">
             <!-- <img src="<?= base_url('img/logo.svg') ?>" alt="Logo" class="w-24 h-24"> -->
             <p class="font-bold text-lg pl-7">Docslot</p>
             <h2 class="mt-3 font-bold text-3xl pl-7">Inscription</h2>
 
-
             <form method="POST" class="space-y-4 mt-9 pl-7">
+                <!-- Nom + Prénom -->
                 <div class="flex space-x-4">
                     <div class="flex-1">
                         <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
                         <input type="text" id="nom" name="nom" placeholder="Votre nom"
-                            class=" w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
                     </div>
                     <div class="flex-1">
                         <label for="prenom" class="block text-sm font-medium text-gray-700 mb-1">Prénom</label>
                         <input type="text" id="prenom" name="prenom" placeholder="Votre prénom"
-                            class=" w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
                     </div>
                 </div>
 
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                    <input type="email" id="email" name="email" placeholder="votre email"
-                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                <!-- Email + Téléphone -->
+                <div class="flex space-x-4">
+                    <div class="flex-1">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Votre email"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                    </div>
+                    <div class="flex-1">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                    </div>
                 </div>
-                <div>
-                    <label for="mot_de_passe" class="block text-sm font-medium text-gray-700 mb-1">Mot de passe</label>
-                    <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="votre mot de passe"
-                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+
+                <!-- Date de naissance + Genre -->
+                <div class="flex space-x-4">
+                    <div class="flex-1">
+                        <label for="date_of_birth" class="block text-sm font-medium text-gray-700 mb-1">Date de naissance</label>
+                        <input type="date" id="date_of_birth" name="date_of_birth"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                    </div>
+                    <div class="flex-1">
+                        <label for="gender" class="block text-sm font-medium text-gray-700 mb-1">Genre</label>
+                        <select id="gender" name="gender"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                            <option value="">Sélectionnez</option>
+                            <option value="Homme">Homme</option>
+                            <option value="Femme">Femme</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
                 </div>
-                <div>
-                    <label for="confirm_password" class="block text-sm font-medium text-gray-700 mb-1">Confirmer le mot de passe</label>
-                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmez votre mot de passe" required
-                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+
+                <!-- Mot de passe + Confirmation -->
+                <div class="flex space-x-4">
+                    <div class="flex-1">
+                        <label for="mot_de_passe" class="block text-sm font-medium text-gray-700 mb-1">Mot de passe</label>
+                        <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="Votre mot de passe"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                    </div>
+                    <div class="flex-1">
+                        <label for="confirm_password" class="block text-sm font-medium text-gray-700 mb-1">Confirmer le mot de passe</label>
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmez votre mot de passe" required
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                    </div>
                 </div>
+
+                <!-- Bouton -->
                 <button type="submit"
                     class="w-full bg-black text-white py-2 rounded-lg hover:bg-white hover:outline hover:outline-2 hover:text-black hover:outline-black transition-colors font-semibold">
                     S'inscrire
                 </button>
             </form>
+
+
 
             <p class="text-center text-sm text-gray-500 mt-4">
                 Déjà un compte ? <a href="<?= base_url('auth/login') ?>" class="text-black font-semibold hover:underline">Se connecter</a>

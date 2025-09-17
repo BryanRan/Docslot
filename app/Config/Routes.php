@@ -15,5 +15,10 @@ $routes->group('auth', function( RouteCollection $route) {
 
 $routes->group('patient',['filter'=>'authFilter'],function (RouteCollection $route) {
     $route->get('dashboard', 'Patient\DashboardController::dashboard');
+    $route->get('appointment', 'Patient\AppointmentController::appointment');
+    $route->get('consult', 'Patient\ConsultationController::consult');
+    $route->get('doctor', 'Patient\DoctorController::doctor');
     $route->get('profile', 'Patient\ProfileController::profile');
+    $route->get('logout', 'AuthController::logout');
+
 });

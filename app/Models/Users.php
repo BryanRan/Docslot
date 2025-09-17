@@ -12,7 +12,16 @@ class Users extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ["nom","prenom","email","mot_de_passe"];
+    protected $allowedFields = [
+        "nom",
+        "prenom",
+        "email",
+        "phone",
+        "date_of_birth",
+        "gender",
+        "mot_de_passe"
+    ];
+
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

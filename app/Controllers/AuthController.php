@@ -16,14 +16,18 @@
             {
                 $data = $this->request->getPost();
                 $rules = [
-                    'nom' => 'required|max_length[100]|min_length[3]',    
-                    'prenom' => 'required|max_length[100]|min_length[3]',    
-                    'email' => 'required|valid_email|is_unique[users.email]',
-                    'mot_de_passe' => 'required|min_length[8]',
-                    'confirm_password' => 'required|matches[mot_de_passe]'
+                    'nom'              => 'required|max_length[100]|min_length[3]',
+                    'prenom'           => 'required|max_length[100]|min_length[3]',
+                    'email'            => 'required|valid_email|is_unique[users.email]',
+                    'phone'            => 'required|regex_match[/^[0-9]{8,15}$/]', // 8 à 15 chiffres
+                    'date_of_birth'   => 'required|valid_date', // valide une vraie date
+                    'gender'            => 'required|in_list[Homme,Femme,Autre]', // doit correspondre à une des options
+                    'mot_de_passe'     => 'required|min_length[8]',
+                    'confirm_password' => 'required|matches[mot_de_passe]',
                 ];
 
-                if(!$this->validate($rules))
+
+            if(!$this->validate($rules))
                 {
                     session()->setFlashdata('errors',$this->validator->getErrors());
                     return redirect()->back()->withInput();
@@ -72,16 +76,19 @@
                 $passwordCheck = password_verify($data['mot_de_passe'],$user->mot_de_passe);
 
                 if(!$passwordCheck)
-                    return redirect()->back()->withInput()->with('errors', ['email' => 'Le mot de passe saisi est incorrect']);
+                    return redirect()->back()->withInput()->with('errors', ['mot_de_passe' => 'Le mot de passe saisi est incorrect']);
             
                 session()->set('user',[
                     'id'=>$user->id,
                     'nom'=>$user->nom,
                     'prenom'=>$user->prenom,
-                    'email'=>$user->email    
+                    'email'=>$user->email,
+                    'gender'=>$user->gender,
+                    'date_of_birth'=>$user->date_of_birth,
+                    'phone'=>$user->phone
                 ]);
 
-            return redirect()->to(base_url('patient/profile'));
+            return redirect()->to(base_url('patient/dashboard'));
         }
 
             return view('auth/login');

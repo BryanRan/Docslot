@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboar</title>
-</head>
-<body>
-    <p>Bienvenu dans dashboard</p>
-</body>
-</html>
+<?= $this->extend('layouts/main') ?>
+
+<?= $this->section('content') ?>
+
+<h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+
+<p>Bienvenue dans votre espace patient. Ici vous verrez vos informations.</p>
+
+<?= $this->endSection() ?>

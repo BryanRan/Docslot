@@ -9,6 +9,8 @@ class ProfileController extends BaseController
 {
     public function profile()
     {
-        return view('patient/profile');
+        return view('patient/profile', [
+            'title' => 'Profil'
+        ]);
     }
 }
