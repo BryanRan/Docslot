@@ -132,3 +132,17 @@ yarn-debug.log*
 yarn-error.log*
 .pnp.*
 .pnp.js
+
+# Ignorer les fichiers images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.tif
+*.ico
+*.svg
+*.webp
+*.psd
+*.xcf
