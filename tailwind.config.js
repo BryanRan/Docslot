@@ -6,7 +6,11 @@ module.exports = {
     "./public/**/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'custom-green': '#20774F',
+      },
+    },
   },
   plugins: [],
 }

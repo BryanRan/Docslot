@@ -81,10 +81,15 @@
                     'email'=>$user->email    
                 ]);
 
-                if($user->role === "patient")
-                    redirect()->to(base_url("patient/dashboard"));
-            }
+            return redirect()->to(base_url('patient/profile'));
+        }
 
             return view('auth/login');
+        }
+
+        public function logout()
+        {
+            $this->session->destroy();
+            return redirect()->to(base_url('auth/login'));
         }
     }

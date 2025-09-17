@@ -10,65 +10,99 @@
 </head>
 
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 class="text-2xl font-bold text-center mb-6">Créer un compte</h2>
 
-        <!-- Zone d'affichage des erreurs globales -->
-        <?php if (session()->has('errors')): ?>
-            <div class="mb-4 p-3 rounded-lg bg-red-100 border border-red-400 text-red-700">
-                <ul class="list-disc list-inside text-sm">
-                    <?php foreach (session('errors') as $error): ?>
-                        <li><?= esc($error) ?></li>
-                    <?php endforeach ?>
-                </ul>
-            </div>
-        <?php endif; ?>
+    <?php if (session()->has('errors')): ?>
+        <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-xl px-4">
+            <div id="alert" class="flex items-center bg-red-50 border-l-4 border-red-500 p-4 rounded-lg shadow-md
+            opacity-0 -translate-y-6 transition-all duration-500 ease-out">
+                <!-- Icône -->
+                <svg class="w-6 h-6 text-red-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-12.728 12.728m0-12.728l12.728 12.728" />
+                </svg>
 
-        <form method="POST" class="space-y-4">
-            <!-- Nom et Prénom sur la même ligne -->
-            <div class="flex space-x-4">
-                <div class="flex-1">
-                    <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
-                    <input type="text" id="nom" name="nom" placeholder="Votre nom" 
-                        class=" w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                </div>
-                <div class="flex-1">
-                    <label for="prenom" class="block text-sm font-medium text-gray-700 mb-1">Prénom</label>
-                    <input type="text" id="prenom" name="prenom" placeholder="Votre prénom"
-                        class=" w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <!-- Message -->
+                <div class="ml-3">
+                    <strong class="block text-red-800 font-semibold">Erreur :</strong>
+                    <ul class="list-disc list-inside text-red-700 text-sm mt-1">
+                        <?php foreach (session('errors') as $error): ?>
+                            <li><?= esc($error) ?></li>
+                        <?php endforeach ?>
+                    </ul>
                 </div>
             </div>
+        </div>
 
-            <!-- Email -->
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input type="email" id="email" name="email" placeholder="votre email" required 
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        <!-- Inclusion du JS séparé -->
+        <script src="<?= base_url('js/alert.js') ?>"></script>
+    <?php endif; ?>
+
+    <div class="w-full mx-52 rounded-lg bg-white p-8 flex justify-between">
+        <!-- Form -->
+        <div class="h-[32rem] w-[23rem]">
+            <!-- <img src="<?= base_url('img/logo.svg') ?>" alt="Logo" class="w-24 h-24"> -->
+            <p class="font-bold text-lg pl-7">Docslot</p>
+            <h2 class="mt-3 font-bold text-3xl pl-7">Inscription</h2>
+
+
+            <form method="POST" class="space-y-4 mt-9 pl-7">
+                <div class="flex space-x-4">
+                    <div class="flex-1">
+                        <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom"
+                            class=" w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                    </div>
+                    <div class="flex-1">
+                        <label for="prenom" class="block text-sm font-medium text-gray-700 mb-1">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom"
+                            class=" w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="email" name="email" placeholder="votre email"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                </div>
+                <div>
+                    <label for="mot_de_passe" class="block text-sm font-medium text-gray-700 mb-1">Mot de passe</label>
+                    <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="votre mot de passe"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                </div>
+                <div>
+                    <label for="confirm_password" class="block text-sm font-medium text-gray-700 mb-1">Confirmer le mot de passe</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmez votre mot de passe" required
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+                </div>
+                <button type="submit"
+                    class="w-full bg-black text-white py-2 rounded-lg hover:bg-white hover:outline hover:outline-2 hover:text-black hover:outline-black transition-colors font-semibold">
+                    S'inscrire
+                </button>
+            </form>
+
+            <p class="text-center text-sm text-gray-500 mt-4">
+                Déjà un compte ? <a href="<?= base_url('auth/login') ?>" class="text-black font-semibold hover:underline">Se connecter</a>
+            </p>
+        </div>
+
+        <!-- Presentation -->
+        <div class="relative h-[32rem] w-96 rounded-lg overflow-hidden">
+            <div class="absolute inset-0 bg-no-repeat bg-cover"
+                style="background-image: url(<?= base_url('img/bureau.jpg') ?>);">
             </div>
-
-            <!-- Mot de passe -->
-            <div>
-                <label for="mot_de_passe" class="block text-sm font-medium text-gray-700 mb-1">Mot de passe</label>
-                <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="votre mot de passe" required
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+            <div class="relative z-10 p-4 text-white">
+                <img src="<?= base_url('img/logo.svg') ?>" alt="Logo" class="w-24 h-24">
+                <h2 class="text-xl font-bold">Docslot</h2>
+                <p>Votre gestionnaire de rendez-vous médical</p>
+                <p class="text-2xl font-bold mt-10">Bienvenu dans Docslot</p>
+                <div class="bg-white rounded-xl mt-20 py-3 px-4 text-black">
+                    <h3 class="text-lg font-semibold">Prenez un rendez-vous dans notre cabinet en quelques clics</h3>
+                    <p class="text-sm">Gérez vos consultations médicales facilement et rapidement grâce à notre système de rendez-vous simplifié</p>
+                    <p class="text-sm text-end">REJOIGNEZ NOUS</p>
+                </div>
             </div>
+        </div>
 
-            <!-- Confirmer mot de passe -->
-            <div>
-                <label for="confirm_password" class="block text-sm font-medium text-gray-700 mb-1">Confirmer le mot de passe</label>
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmez votre mot de passe" required
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-            </div>
-
-            <button type="submit"
-                class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
-                S'inscrire
-            </button>
-        </form>
-
-        <p class="text-center text-sm text-gray-500 mt-4">
-            Déjà un compte ? <a href="<?= base_url('auth/login') ?>" class="text-blue-600 hover:underline">Se connecter</a>
-        </p>
     </div>
 </body>
 
