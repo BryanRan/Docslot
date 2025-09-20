@@ -9,6 +9,11 @@
             return view('auth/login');
         }
 
+        public function signupView()
+        {
+            return view('auth/signup');
+        }
+
         public function signup()
         {
             $method = $this->request->getMethod('true');
@@ -88,7 +93,10 @@
                     'phone'=>$user->phone
                 ]);
 
-            return redirect()->to(base_url('patient/dashboard'));
+                // if ($role === "admin")
+                //     return redirect()->to(base_url('admin/dashboardAdmin'));
+
+                return redirect()->to(base_url('patient/dashboard'));
         }
 
             return view('auth/login');

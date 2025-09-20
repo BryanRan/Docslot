@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="flex bg-gray-100">
+<body class="flex bg-gray-100 w-screen h-screen pt-1">
 
     <!-- Sidebar -->
     <?= $this->include('layouts/sidebar') ?>

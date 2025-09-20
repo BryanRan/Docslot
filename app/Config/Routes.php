@@ -5,7 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+
+$routes->get('/', 'HomeController::index');
 
 $routes->group('auth', function( RouteCollection $route) {
     $route->match(['get','post'],'login','AuthController::login');
@@ -20,5 +21,8 @@ $routes->group('patient',['filter'=>'authFilter'],function (RouteCollection $rou
     $route->get('doctor', 'Patient\DoctorController::doctor');
     $route->get('profile', 'Patient\ProfileController::profile');
     $route->get('logout', 'AuthController::logout');
+});
 
+$routes->group('admin', function (RouteCollection $route) {
+    $route->get('dashboard', 'Admin\DashboardController::index');
 });

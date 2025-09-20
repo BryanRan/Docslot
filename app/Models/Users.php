@@ -19,7 +19,8 @@ class Users extends Model
         "phone",
         "date_of_birth",
         "gender",
-        "mot_de_passe"
+        "mot_de_passe",
+        "role"
     ];
 
 
