@@ -1,4 +1,3 @@
-<!-- app/Views/layouts/main.php -->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -21,7 +20,8 @@
         <?= $this->include('layouts/header') ?>
         <?= $this->renderSection('content') ?>
     </main>
-
+    
+    <?= $this->renderSection('scripts') ?>
 </body>
 
 </html>

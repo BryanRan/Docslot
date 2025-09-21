@@ -13,12 +13,14 @@ $routes->group('auth', function( RouteCollection $route) {
     $route->get('logout','AuthController::logout');
 });
 
-$routes->group('patient',['filter'=>'authFilter'],function (RouteCollection $route) {
-    $route->get('dashboard', 'Patient\DashboardController::dashboard');
-    $route->get('appointment', 'Patient\AppointmentController::appointment');
-    $route->get('consult', 'Patient\ConsultationController::consult');
-    $route->get('doctor', 'Patient\DoctorController::doctor');
-    $route->get('profile', 'Patient\ProfileController::profile');
-    $route->get('logout', 'AuthController::logout');
-
+$routes->group('patient', ['filter' => 'authFilter', 'namespace' => 'App\Controllers\Patient'], function($routes) {
+    $routes->get('dashboard', 'DashboardController::dashboard');
+    $routes->get('appointment', 'AppointmentController::appointment');
+    $routes->get('consult', 'ConsultationController::consult');
+    $routes->get('doctor', 'DoctorController::doctor');
+    $routes->get('profile', 'ProfileController::profile'); 
+    $routes->get('settings', 'ProfileController::settings');
+    $routes->post('change-password', 'ProfileController::changePassword'); // Ajout de la route POST
+    $routes->get('delete-account', 'ProfileController::deleteAccount'); // Route GET pour la confirmation de suppression
+    $routes->get('logout', 'AuthController::logout');
 });
