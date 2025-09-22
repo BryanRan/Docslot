@@ -1,4 +1,3 @@
-<!-- app/Views/layouts/main.php -->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -22,6 +21,8 @@
         <?= $this->renderSection('content') ?>
     </main>
     <script src="<?=base_url('js/dash_anim.js')?>"></script>
+    
+    <?= $this->renderSection('scripts') ?>
 </body>
 
 </html>
