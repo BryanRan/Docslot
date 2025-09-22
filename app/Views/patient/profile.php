@@ -60,41 +60,6 @@
 
         <!-- Paramètres du compte -->
         <div class="p-4 rounded-lg space-y-4 grid grid-cols-1 md:grid-cols-2 gap-6" id="compte" role="tabpanel" aria-labelledby="compte-tab">
-            <h2 class="text-xl font-semibold text-gray-800 col-span-1 md:col-span-2">Paramètres de connexion</h2>
-
-            <div>
-                <label class="text-gray-500 font-medium text-sm">Adresse e-mail</label>
-                <p class="mt-1 text-lg font-semibold text-gray-800"><?= session()->get('user')['email'] ?></p>
-            </div>
-            <div>
-                <label class="text-gray-500 font-medium text-sm">Mot de passe</label>
-                <p class="mt-1 text-lg font-semibold text-gray-800 tracking-widest">
-                    ••••••••
-                </p>
-            </div>
-
-
-            <div class="col-span-1 md:col-span-2">
-                <button id="change-password-button" class="mt-4 bg-dark-green text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-lg flex items-center">
-                    <i class="mdi mdi-pen w-5 h-5 mr-2"></i>
-                    Changer le mot de passe
-                </button>
-            </div>
-
-            <div id="password-fields" class="col-span-1 md:col-span-2 mt-4 space-y-4 hidden">
-                <div class="max-w-md space-y-1">
-                    <label for="new-password" class="text-gray-500 font-medium text-sm">Nouveau mot de passe</label>
-                    <input type="password" id="new-password" class="w-full mt-1 p-3 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500 transition-colors duration-200">
-                </div>
-                <div class="max-w-md space-y-1">
-                    <label for="confirm-password" class="text-gray-500 font-medium text-sm">Confirmer le mot de passe</label>
-                    <input type="password" id="confirm-password" class="w-full mt-1 p-3 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500 transition-colors duration-200">
-                </div>
-                <button class="bg-dark-green text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-lg">Enregistrer</button>
-            </div>
-
-            <hr class="col-span-1 md:col-span-2 my-6 border-gray-200">
-
             <h2 class="text-xl font-semibold text-gray-800 col-span-1 md:col-span-2">Gestion du compte</h2>
             <div class="col-span-1 md:col-span-2">
                 <h3 class="font-semibold text-red-500">Supprimer mon compte</h3>

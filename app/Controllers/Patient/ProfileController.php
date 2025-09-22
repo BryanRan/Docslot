@@ -53,44 +53,54 @@ class ProfileController extends BaseController
             'activePage' => 'settings'
         ]);
     }
-    
+
     public function changePassword()
     {
-        // On vérifie que la requête est de type POST
         if ($this->request->getMethod() !== 'post') {
             return redirect()->back();
         }
 
         $session = session();
-        $userId = $session->get('user_id');
+        $userId = $session->get('id');
         $userModel = new Users();
-        
-        // Sécurité : Vérifiez que l'utilisateur est bien connecté avant de continuer.
+
         if (!$userId) {
             return redirect()->to(base_url('auth/login'));
         }
 
-        // Validation des données du formulaire
+        // Règles de validation
         $rules = [
-            'new_password' => 'required|min_length[8]',
+            'old_password'     => 'required',
+            'new_password'     => 'required|min_length[8]',
             'confirm_password' => 'required|matches[new_password]',
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            // Récupère les erreurs de validation (tableau)
+            $errors = $this->validator->getErrors();
+            // Sauvegarde en flashdata
+            $session->setFlashdata('errors', $errors);
+            return redirect()->back()->withInput();
         }
 
+        $oldPassword = $this->request->getPost('old_password');
         $newPassword = $this->request->getPost('new_password');
 
-        // Hachage du mot de passe avant de le sauvegarder
-        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+        $user = $userModel->find($userId);
 
-        // Mise à jour du mot de passe dans la base de données
+        if (!$user || !password_verify($oldPassword, $user['mot_de_passe'])) {
+            $session->setFlashdata('error', 'Ancien mot de passe incorrect.');
+            return redirect()->back()->withInput();
+        }
+
+        // Hachage et mise à jour
+        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
         $userModel->update($userId, ['mot_de_passe' => $hashedPassword]);
 
-        // Redirection avec un message de succès
-        return redirect()->to(base_url('patient/settings'))->with('success', 'Votre mot de passe a été mis à jour avec succès.');
+        $session->setFlashdata('success', 'Votre mot de passe a été mis à jour avec succès.');
+        return redirect()->to(base_url('patient/profile'));
     }
+
 
     public function deleteAccount()
     {
