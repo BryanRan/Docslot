@@ -146,3 +146,6 @@ yarn-error.log*
 *.webp
 *.psd
 *.xcf
+
+# Tailwind build
+/public/css/output.css
