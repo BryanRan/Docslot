@@ -20,10 +20,9 @@ $routes->group('patient',['filter'=>'authFilter'],function (RouteCollection $rou
     $route->get('consult', 'Patient\ConsultationController::consult');
     $route->get('doctor', 'Patient\DoctorController::doctor');
     $route->get('profile', 'Patient\ProfileController::profile');
-    $route->post('change-password', 'Patient\ProfileController::changePassword'); // Ajout de la route POST
-    $route->get('delete-account', 'Patient\ProfileController::deleteAccount');
+    $route->post('settings', 'Patient\ProfileController::changePassword'); // Ajout de la route POST
+    $route->get('deleteAccount', 'Patient\ProfileController::deleteAccount');
     $route->get('logout', 'AuthController::logout');
-
 });
 
 $routes->group('admin', function (RouteCollection $route) {

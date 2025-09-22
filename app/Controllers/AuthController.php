@@ -31,6 +31,8 @@ class AuthController extends BaseController
                 'gender'           => 'required|in_list[Homme,Femme,Autre]',
                 'mot_de_passe'     => 'required|min_length[8]',
                 'confirm_password' => 'required|matches[mot_de_passe]',
+                'adresse'                 => 'required|min_length[5]|max_length[255]',
+                'numero_securite_sociale' => 'required|numeric|exact_length[15]'
             ];
 
             if(!$this->validate($rules))

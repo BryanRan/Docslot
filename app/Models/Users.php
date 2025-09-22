@@ -20,7 +20,8 @@ class Users extends Model
         "date_of_birth",
         "gender",
         "mot_de_passe",
-        "role"
+        "adresse",
+        "numero_securite_sociale"
     ];
 
 

@@ -36,7 +36,7 @@
                         <p class="mt-1 text-lg font-semibold text-gray-800">********</p>
                     </div>
                 </div>
-                
+
                 <button id="change-password-btn" class="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm font-medium">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 mr-2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.932zm0 0L19.5 7.75" />
@@ -58,7 +58,7 @@
                         <?= csrf_field() ?>
                         <div class="space-y-4">
                             <div>
-                                <label for="new_password" class="block text-sm font-medium text-gray-700">Nouveau mot de passe</label>
+                                <label for="new_passwordj" class="block text-sm font-medium text-gray-700">Nouveau mot de passe</label>
                                 <input type="password" name="new_password" id="new_password" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
                             </div>
                             <div>
@@ -75,9 +75,9 @@
                 <div>
                     <h2 class="text-lg font-bold text-gray-800 mb-2">Gestion du compte</h2>
                     <p class="text-sm text-gray-600 mb-4">La suppression de votre compte est une action permanente et ne peut pas être annulée. Toutes vos données seront définitivement supprimées.</p>
-                    <button id="delete-account-btn" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 text-sm font-medium">
-                        Supprimer mon compte
-                    </button>
+                    <a href="<?= base_url('')?>"><button id="delete-account-btn" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 text-sm font-medium">
+                            Supprimer mon compte
+                    </button></a>
                 </div>
             </div>
         </div>

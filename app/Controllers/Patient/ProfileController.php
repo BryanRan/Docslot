@@ -104,13 +104,17 @@ class ProfileController extends BaseController
 
         $userModel = new Users();
 
-        // On détruit la session pour déconnecter l'utilisateur
-        $session->destroy();
-        
-        // Suppression de l'utilisateur de la base de données
-        $userModel->delete($userId);
+        // Vérifier que l'utilisateur existe
+        $user = $userModel->find($userId);
+        if (!$user) {
+            return redirect()->back()->with('error', 'Utilisateur introuvable.');
+        }
 
-        
+        // Supprimer l'utilisateur physiquement (pas de soft delete)
+        $userModel->delete($userId, true); // true = suppression physique
+
+        // Détruire la session pour déconnecter l'utilisateur
+        $session->destroy();
 
         // Redirection vers la page de connexion
         return redirect()->to(base_url('auth/login'))->with('message', 'Votre compte a été supprimé.');

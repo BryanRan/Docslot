@@ -39,8 +39,8 @@
 
     <div class="w-full mx-44 rounded-lg bg-white p-8 flex justify-between shadow-xl">
         <!-- Formulaire Signup avec animation -->
-        <div class="h-[32rem] w-[25rem] animate-fadeLeft opacity-0">
-            <a href="<?=base_url('/')?>" class="font-bold text-lg pl-7">Docslot</a>
+        <div class="w-[25rem] animate-fadeLeft opacity-0">
+            <a href="<?= base_url('/') ?>" class="font-bold text-lg pl-7">Docslot</a>
             <h2 class="mt-3 font-bold text-3xl pl-7">Inscription</h2>
 
             <form method="POST" class="space-y-4 mt-9 pl-7 animate-fadeUp opacity-0">
@@ -57,6 +57,19 @@
                             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
                     </div>
                 </div>
+                <!-- Adresse + Secu -->
+                <div class="flex space-x-4">
+                    <div class="flex-1">
+                        <label for="adresse" class="block text-sm font-medium text-gray-700 mb-1">Adresse</label>
+                        <input type="text" id="adrese" name="adresse" placeholder="Votre adresse"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                    </div>
+                    <div class="flex-1">
+                        <label for="numero_securite_sociale" class="block text-sm font-medium text-gray-700 mb-1">Numéro de sécurité sociale</label>
+                        <input type="text" id="numero_securite_sociale" name="numero_securite_sociale" placeholder="Numero de sécurité sociale"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                    </div>
+                </div>
 
                 <!-- Email + Téléphone -->
                 <div class="flex space-x-4">
@@ -67,7 +80,7 @@
                     </div>
                     <div class="flex-1">
                         <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone"
+                        <input type="tel" id="phone" name="phone" placeholder="Numero de téléphone"
                             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
                     </div>
                 </div>
@@ -119,23 +132,36 @@
         </div>
 
         <!-- Presentation -->
-        <div class="relative h-[32rem] w-96 rounded-lg overflow-hidden group group-perspective tilt-card animate-fadeUp opacity-0">
-            <!-- Image de fond -->
-            <div class="absolute inset-0 bg-no-repeat bg-cover scale-110 transition-transform duration-[3000ms] ease-out"
-                style="background-image: url(<?= base_url('img/bureau.jpg') ?>);"></div>
-            <div class="absolute inset-0 bg-gray-900 bg-opacity-30"></div>
+        <div class="relative h-[42rem] w-96 rounded-xl overflow-hidden group perspective">
+            <!-- Image de fond avec animation de zoom et tilt -->
+            <div class="absolute inset-0 bg-no-repeat bg-cover transition-transform duration-[3000ms] ease-out 
+        group-hover:scale-110 group-hover:rotate-1 group-hover:-skew-y-2"
+                style="background-image: url(<?= base_url('img/bureau.jpg') ?>);">
+            </div>
+
+            <!-- Overlay foncé -->
+            <div class="absolute inset-0 bg-gray-900 bg-opacity-40"></div>
 
             <!-- Contenu -->
-            <div class="relative z-10 p-4 text-white">
-                <img src="<?= base_url('img/logo.svg') ?>" alt="Logo" class="w-24 h-24 animate-scale opacity-0">
-                <h2 class="text-xl font-bold animate-fadeUp opacity-0">Docslot</h2>
-                <p class="animate-fadeUp opacity-0">Votre gestionnaire de rendez-vous médical</p>
-                <p class="text-2xl font-bold mt-10 animate-fadeUp opacity-0">Bienvenu dans Docslot</p>
+            <div class="relative z-10 p-6 text-white transform transition-transform duration-700 ease-out
+        group-hover:rotate-1 group-hover:skew-y-1 group-hover:scale-105">
 
-                <div class="bg-white rounded-xl mt-20 py-3 px-4 text-gray-900 shadow-lg transform transition-transform duration-500 hover:scale-105 tilt-card">
-                    <h3 class="text-lg font-semibold">Prenez un rendez-vous dans notre cabinet en quelques clics</h3>
-                    <p class="text-sm">Gérez vos consultations médicales facilement et rapidement grâce à notre système simplifié</p>
-                    <p class="text-sm text-end font-bold text-gray-700">REJOIGNEZ-NOUS 🩺</p>
+                <img src="<?= base_url('img/logo.svg') ?>" alt="Logo"
+                    class="w-20 h-20 mb-4 transform transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110">
+
+                <h2 class="text-2xl font-bold mb-2 animate-fadeUp opacity-0">Docslot</h2>
+                <p class="text-sm animate-fadeUp opacity-0">Votre gestionnaire de rendez-vous médical</p>
+
+                <p class="text-2xl font-bold mt-8 leading-snug animate-fadeUp opacity-0">
+                    Créez votre compte pour accéder à nos services
+                </p>
+
+                <!-- Carte animée -->
+                <div class="bg-white rounded-xl mt-20 py-4 px-5 text-gray-900 shadow-lg transform transition-all duration-700
+            hover:scale-110 hover:-rotate-2 animate-fadeUp opacity-0">
+                    <h3 class="text-lg font-semibold">Prenez un rendez-vous en quelques clics</h3>
+                    <p class="text-sm mt-1">Gérez vos consultations médicales facilement et rapidement grâce à notre système simplifié</p>
+                    <p class="text-sm text-end font-bold text-gray-700 mt-2 tracking-wide">REJOIGNEZ-NOUS 🩺</p>
                 </div>
             </div>
         </div>
