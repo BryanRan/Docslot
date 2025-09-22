@@ -25,6 +25,14 @@ $routes->group('patient',['filter'=>'authFilter'],function (RouteCollection $rou
     $route->get('logout', 'AuthController::logout');
 });
 
-$routes->group('admin', function (RouteCollection $route) {
-    $route->get('dashboard', 'Admin\DashboardController::index');
+$routes->group('admin', function ($routes) {
+    $routes->get('login', 'AdminAuthController::login');
+    $routes->post('login', 'AdminAuthController::attemptLogin');
+    $routes->get('logout', 'AdminAuthController::logout');
+
+    // protégées par le filtre adminAuth
+    $routes->group('', ['filter' => 'adminAuth'], function ($routes) {
+        $routes->get('dashboard', 'Admin\DashboardController::index');
+        // tu pourras mettre ici d’autres routes admin
+    });
 });
