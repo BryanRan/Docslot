@@ -1,4 +1,4 @@
-<header class="w-full h-14 p-2 bg-neutral-300/40 rounded-lg justify-between flex items-center">
+<header class="w-full p-2 bg-light-green/5 rounded-lg justify-between flex items-center">
     <!-- Search bar -->
     <form action="">
         <div class="relative w-full">

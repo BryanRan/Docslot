@@ -237,7 +237,7 @@
             <div class="grid md:grid-cols-3 gap-8">
 
                 <div>
-                    <h4 class="font-bold mb-4 text-med-green">Fonctionnalités</h4>
+                    <h4 class="font-bold mb-4 text-med-green">Vos outils santé</h4>
                     <ul class="space-y-2 text-sm text-gray-300">
                         <li>Réservation en ligne</li>
                         <li>Historique des rendez-vous</li>

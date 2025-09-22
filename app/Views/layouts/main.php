@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="flex bg-gray-100 w-screen h-screen pt-1">
+<body class="flex w-full pt-4">
 
     <!-- Sidebar -->
     <?= $this->include('layouts/sidebar') ?>
@@ -21,7 +21,7 @@
         <?= $this->include('layouts/header') ?>
         <?= $this->renderSection('content') ?>
     </main>
-
+    <script src="<?=base_url('js/dash_anim.js')?>"></script>
 </body>
 
 </html>
