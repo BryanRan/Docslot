@@ -69,7 +69,7 @@
                         </div>
                         <div class="flex-1">
                             <label for="numero_securite_sociale" class="block text-sm font-medium text-gray-700 mb-1">N° sécurité sociale</label>
-                            <input type="text" id="numero_securite_sociale" name="numero_securite_sociale" placeholder="Numéro de sécurité sociale"
+                            <input type="text" id="numero_securite_sociale" name="numero_securite_sociale" placeholder="N° sécurité sociale"
                                 class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                         </div>
                         <div class="flex-1">
                             <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Numéro de téléphone"
+                            <input type="tel" id="phone" name="phone" placeholder="N° de téléphone"
                                 class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
                         </div>
                     </div>

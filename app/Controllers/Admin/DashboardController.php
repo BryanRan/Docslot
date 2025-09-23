@@ -17,4 +17,18 @@ class DashboardController extends BaseController
             'rendezvous' => $rendezvous
         ]);
     }
+
+    public function updateStatus($id, $status)
+    {
+        $validStatuses = ['validé', 'refusé', 'annulé'];
+
+        if (!in_array($status, $validStatuses)) {
+            return redirect()->back()->with('error', 'Statut invalide.');
+        }
+
+        $rendezvousModel = new RendezvousModel();
+        $rendezvousModel->update($id, ['statut' => $status]);
+
+        return redirect()->to(base_url('admin/dashboard'))->with('success', "Le rendez-vous a été $status.");
+    }
 }

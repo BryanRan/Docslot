@@ -5,11 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashboardAdmin</title>
+    <link rel="stylesheet" href="<?=base_url('css/output.css')?>"/>
 </head>
 
 <body>
     <div class="p-6">
         <h1 class="text-2xl font-bold mb-4">Tableau de bord administrateur</h1>
+
+        <?php if (session()->getFlashdata('success')): ?>
+            <div class="p-3 mb-4 text-green-700 bg-green-100 rounded">
+                <?= session()->getFlashdata('success') ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (session()->getFlashdata('error')): ?>
+            <div class="p-3 mb-4 text-red-700 bg-red-100 rounded">
+                <?= session()->getFlashdata('error') ?>
+            </div>
+        <?php endif; ?>
 
         <table class="w-full border border-gray-200 rounded-lg">
             <thead>
@@ -34,15 +47,19 @@
                             </span>
                         </td>
                         <td class="p-2 space-x-2">
-                            <a href="#" class="text-green-600 hover:underline">Valider</a>
-                            <a href="#" class="text-red-600 hover:underline">Refuser</a>
-                            <a href="#" class="text-gray-600 hover:underline">Annuler</a>
+                            <a href="<?= base_url('admin/rendezvous/update/' . $rdv['id'] . '/validé') ?>"
+                                class="text-green-600 hover:underline">Valider</a>
+                            <a href="<?= base_url('admin/rendezvous/update/' . $rdv['id'] . '/refusé') ?>"
+                                class="text-red-600 hover:underline">Refuser</a>
+                            <a href="<?= base_url('admin/rendezvous/update/' . $rdv['id'] . '/annulé') ?>"
+                                class="text-gray-600 hover:underline">Annuler</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
+
 
 </body>
 

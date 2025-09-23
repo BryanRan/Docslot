@@ -26,13 +26,31 @@ $routes->group('patient',['filter'=>'authFilter'],function (RouteCollection $rou
 });
 
 $routes->group('admin', function ($routes) {
+    // 🔓 Auth publique
     $routes->get('login', 'AdminAuthController::login');
     $routes->post('login', 'AdminAuthController::attemptLogin');
     $routes->get('logout', 'AdminAuthController::logout');
 
-    // protégées par le filtre adminAuth
+    // 🔐 Zone protégée
     $routes->group('', ['filter' => 'adminAuth'], function ($routes) {
+        // Dashboard
         $routes->get('dashboard', 'Admin\DashboardController::index');
-        // tu pourras mettre ici d’autres routes admin
+        $routes->get('rendezvous/update/(:num)/(:alpha)', 'Admin\DashboardController::updateStatus/$1/$2');
+
+        // Gestion des créneaux
+        $routes->get('creneaux/index', 'Admin\CreneauxController::index');
+        $routes->get('creneaux/create', 'Admin\CreneauxController::create');
+        $routes->post('creneaux/store', 'Admin\CreneauxController::store');
+        $routes->get('creneaux/edit/(:num)', 'Admin\CreneauxController::edit/$1');
+        $routes->post('creneaux/update/(:num)', 'Admin\CreneauxController::update/$1');
+        $routes->get('creneaux/delete/(:num)', 'Admin\CreneauxController::delete/$1');
+
+        // Gestion des médecins
+        $routes->get('medecins/index', 'Admin\MedecinsController::index');
+        $routes->get('medecins/create', 'Admin\MedecinsController::create');
+        $routes->post('medecins/store', 'Admin\MedecinsController::store');
+        $routes->get('medecins/edit/(:num)', 'Admin\MedecinsController::edit/$1');
+        $routes->post('medecins/update/(:num)', 'Admin\MedecinsController::update/$1');
+        $routes->get('medecins/delete/(:num)', 'Admin\MedecinsController::delete/$1');
     });
 });

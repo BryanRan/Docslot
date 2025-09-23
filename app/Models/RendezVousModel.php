@@ -13,9 +13,9 @@ class RendezvousModel extends Model
     public function getAllWithDetails()
     {
         return $this->select('rendezvous.id, users.nom, users.prenom, creneaux.date, creneaux.heure_debut, creneaux.heure_fin, rendezvous.statut')
-            ->join('users', 'users.id = rendezvous.id_utilisateur')
-            ->join('creneaux', 'creneaux.id = rendezvous.id_creneau')
-            ->orderBy('creneaux.date', 'DESC')
-            ->findAll();
+                    ->join('users', 'users.id = rendezvous.id_utilisateur')
+                    ->join('creneaux', 'creneaux.id = rendezvous.id_creneau')
+                    ->orderBy('creneaux.date', 'DESC')
+                    ->findAll();
     }
 }
