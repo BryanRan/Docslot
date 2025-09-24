@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajouter un créneau</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="<?= base_url('css/output.css') ?>" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100">
@@ -51,7 +51,7 @@
             </div>
 
             <div class="flex justify-end">
-                <a href="<?= site_url('admin/creneaux') ?>"
+                <a href="<?= site_url('admin/creneaux/index') ?>"
                     class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 mr-2">Annuler</a>
                 <button type="submit"
                     class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">

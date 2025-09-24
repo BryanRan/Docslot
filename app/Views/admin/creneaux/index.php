@@ -4,12 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestion des créneaux</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="<?= base_url('css/output.css') ?>" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100">
     <div class="container mx-auto p-6">
-        <h1 class="text-2xl font-bold mb-6">Liste des créneaux</h1>
+        <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold mb-4">Liste des créneaux</h1>
+            <div>
+                <a href="<?= site_url('admin/dashboard') ?>"
+                    class="bg-blue-600 text-white px-4 py-2 rounded duration-100 transition-colors hover:bg-blue-700 mb-4 inline-block">
+                    Dashboard
+                </a>
+                <a href="<?= site_url('admin/medecins/index') ?>"
+                    class="bg-green-800 text-white px-4 py-2 rounded duration-100 transition-colors hover:bg-dark-green mb-4 inline-block">
+                    Liste des médecins
+                </a>
+            </div>
+        </div>
 
         <a href="<?= site_url('admin/creneaux/create') ?>"
             class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-4 inline-block">

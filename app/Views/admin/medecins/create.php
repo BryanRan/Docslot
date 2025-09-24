@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajouter un médecin</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="<?= base_url('css/output.css') ?>" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100 min-h-screen p-6">

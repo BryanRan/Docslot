@@ -5,13 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashboardAdmin</title>
-    <link rel="stylesheet" href="<?=base_url('css/output.css')?>"/>
+    <link rel="stylesheet" href="<?= base_url('css/output.css') ?>" />
 </head>
 
 <body>
     <div class="p-6">
-        <h1 class="text-2xl font-bold mb-4">Tableau de bord administrateur</h1>
-
+        <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold mb-4">Tableau de bord administrateur</h1>
+            <div>
+                <a href="<?= site_url('admin/creneaux/index') ?>"
+                    class="bg-blue-600 text-white px-4 py-2 rounded duration-100 transition-colors hover:bg-blue-700 mb-4 inline-block">
+                    Liste des créneaux
+                </a>
+                <a href="<?= site_url('admin/medecins/index') ?>"
+                    class="bg-green-800 text-white px-4 py-2 rounded duration-100 transition-colors hover:bg-dark-green mb-4 inline-block">
+                    Liste des médecins
+                </a>
+            </div>
+        </div>
         <?php if (session()->getFlashdata('success')): ?>
             <div class="p-3 mb-4 text-green-700 bg-green-100 rounded">
                 <?= session()->getFlashdata('success') ?>
