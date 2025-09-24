@@ -21,6 +21,10 @@
                     class="bg-green-800 text-white px-4 py-2 rounded duration-100 transition-colors hover:bg-dark-green mb-4 inline-block">
                     Liste des médecins
                 </a>
+                <a href="<?= site_url('admin/logout') ?>"
+                    class="bg-gray-900 text-white px-4 py-2 rounded duration-100 transition-colors hover:bg-gray-800 mb-4 inline-block">
+                    Deconnexion
+                </a>
             </div>
         </div>
         <?php if (session()->getFlashdata('success')): ?>
@@ -57,14 +61,17 @@
                                 <?= esc($rdv['statut']) ?>
                             </span>
                         </td>
-                        <td class="p-2 space-x-2">
-                            <a href="<?= base_url('admin/rendezvous/update/' . $rdv['id'] . '/validé') ?>"
-                                class="text-green-600 hover:underline">Valider</a>
-                            <a href="<?= base_url('admin/rendezvous/update/' . $rdv['id'] . '/refusé') ?>"
-                                class="text-red-600 hover:underline">Refuser</a>
-                            <a href="<?= base_url('admin/rendezvous/update/' . $rdv['id'] . '/annulé') ?>"
-                                class="text-gray-600 hover:underline">Annuler</a>
+                        <td class="p-2">
+                            <form action="<?= base_url('admin/updateStatus/' . $rdv['id']) ?>" method="post" class="flex space-x-2">
+                                <button type="submit" name="status" value="validé" class="text-green-600 hover:underline">
+                                    Valider
+                                </button>
+                                <button type="submit" name="status" value="refusé" class="text-red-600 hover:underline">
+                                    Refuser
+                                </button>
+                            </form>
                         </td>
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>

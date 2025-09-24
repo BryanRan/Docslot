@@ -20,8 +20,8 @@
         <!-- Carte exemple -->
         <?php
         $cards = [
-            ['title' => 'Total de demandes', 'icon' => 'mdi-calendar-blank', 'count' => 2, 'color' => 'dark-green', 'bg' => 'bg-light-green/20'],
-            ['title' => 'Rendez-vous en cours', 'icon' => 'mdi-clock-time-three-outline', 'count' => 2, 'color' => 'green-400', 'bg' => 'bg-blue-100'],
+            ['title' => 'Total de demandes', 'icon' => 'mdi-calendar-blank', 'count' => $totalRdv, 'color' => 'dark-green', 'bg' => 'bg-light-green/20'],
+            ['title' => 'demande(s) en attente', 'icon' => 'mdi-clock-time-three-outline', 'count' => $rdvEnAttente, 'color' => 'green-400', 'bg' => 'bg-blue-100'],
             ['title' => 'Rendez-vous annulés', 'icon' => 'mdi-close', 'count' => 3, 'color' => 'red-500', 'bg' => 'bg-red-100'],
             ['title' => 'Rappel', 'icon' => 'mdi-alert', 'count' => null, 'color' => 'dark-green', 'bg' => 'bg-white'],
         ];

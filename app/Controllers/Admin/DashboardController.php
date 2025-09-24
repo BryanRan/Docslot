@@ -18,9 +18,10 @@ class DashboardController extends BaseController
         ]);
     }
 
-    public function updateStatus($id, $status)
+    public function updateStatus($id)
     {
-        $validStatuses = ['validé', 'refusé', 'annulé'];
+        $status = $this->request->getPost('status'); // <-- récupère le bouton cliqué
+        $validStatuses = ['validé', 'refusé'];
 
         if (!in_array($status, $validStatuses)) {
             return redirect()->back()->with('error', 'Statut invalide.');

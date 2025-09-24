@@ -37,11 +37,11 @@
         <script src="<?= base_url('js/alert.js') ?>"></script>
     <?php endif; ?>
 
-    <div class="w-full mx-44 rounded-lg bg-white p-8 flex justify-between shadow-xl overflow-hidden">
+    <div class="w-full mx-44 rounded-lg bg-white p-8 flex justify-between shadow-xl shadow-light-green/15 overflow-hidden">
         <!-- Formulaire Signup -->
         <div class="h-[32rem] w-[25rem] animate-fadeLeft opacity-0 flex flex-col">
-            <a href="<?= base_url('/') ?>" class="font-bold text-lg pl-7">Docslot</a>
-            <h2 class="mt-3 font-bold text-3xl pl-7">Inscription</h2>
+            <img src="<?= base_url('img/Logo 1.png') ?>" alt="" class="h-16 w-16 ml-7">
+            <h2 class="mt-3 font-bold text-3xl text-light-green pl-7">Inscription</h2>
 
             <!-- Conteneur scrollable pour les champs -->
             <div class=" mt-6 pl-7 overflow-y-auto space-y-4">
@@ -49,56 +49,56 @@
                     <!-- Nom + Prénom -->
                     <div class="flex space-x-4">
                         <div class="flex-1">
-                            <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+                            <label for="nom" class="block text-sm font-medium text-light-green mb-1">Nom</label>
                             <input type="text" id="nom" name="nom" placeholder="Votre nom"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green">
                         </div>
                         <div class="flex-1">
-                            <label for="prenom" class="block text-sm font-medium text-gray-700 mb-1">Prénom</label>
+                            <label for="prenom" class="block text-sm font-medium text-light-green mb-1">Prénom</label>
                             <input type="text" id="prenom" name="prenom" placeholder="Votre prénom"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green">
                         </div>
                     </div>
 
                     <!-- Adresse + Secu -->
                     <div class="flex space-x-4">
                         <div class="flex-1">
-                            <label for="adresse" class="block text-sm font-medium text-gray-700 mb-1">Adresse</label>
+                            <label for="adresse" class="block text-sm font-medium text-light-green mb-1">Adresse</label>
                             <input type="text" id="adresse" name="adresse" placeholder="Votre adresse"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green">
                         </div>
                         <div class="flex-1">
-                            <label for="numero_securite_sociale" class="block text-sm font-medium text-gray-700 mb-1">N° sécurité sociale</label>
+                            <label for="numero_securite_sociale" class="block text-sm font-medium text-light-green mb-1">N° sécurité sociale</label>
                             <input type="text" id="numero_securite_sociale" name="numero_securite_sociale" placeholder="N° sécurité sociale"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green">
                         </div>
                     </div>
 
                     <!-- Email + Téléphone -->
                     <div class="flex space-x-4">
                         <div class="flex-1">
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <label for="email" class="block text-sm font-medium text-light-green mb-1">Email</label>
                             <input type="email" id="email" name="email" placeholder="Votre email"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green">
                         </div>
                         <div class="flex-1">
-                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                            <label for="phone" class="block text-sm font-medium text-light-green mb-1">Téléphone</label>
                             <input type="tel" id="phone" name="phone" placeholder="N° de téléphone"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green">
                         </div>
                     </div>
 
                     <!-- Date de naissance + Genre -->
                     <div class="flex space-x-4">
                         <div class="flex-1">
-                            <label for="date_of_birth" class="block text-sm font-medium text-gray-700 mb-1">Date de naissance</label>
+                            <label for="date_of_birth" class="block text-sm font-medium text-light-green mb-1">Date de naissance</label>
                             <input type="date" id="date_of_birth" name="date_of_birth"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                                class="w-full px-4 py-2 border text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green">
                         </div>
                         <div class="flex-1">
-                            <label for="gender" class="block text-sm font-medium text-gray-700 mb-1">Genre</label>
+                            <label for="gender" class="block text-sm font-medium text-light-green mb-1">Genre</label>
                             <select id="gender" name="gender"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                                class="w-full px-4 py-2 border text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green">
                                 <option value="">Sélectionnez</option>
                                 <option value="Homme">Homme</option>
                                 <option value="Femme">Femme</option>
@@ -110,14 +110,14 @@
                     <!-- Mot de passe + Confirmation -->
                     <div class="flex space-x-4">
                         <div class="flex-1">
-                            <label for="mot_de_passe" class="block text-sm font-medium text-gray-700 mb-1">Mot de passe</label>
+                            <label for="mot_de_passe" class="block text-sm font-medium text-light-green mb-1">Mot de passe</label>
                             <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="Votre mot de passe"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green">
                         </div>
                         <div class="flex-1">
-                            <label for="confirm_password" class="block text-sm font-medium text-gray-700 mb-1">Confirmer le mot de passe</label>
+                            <label for="confirm_password" class="block text-sm font-medium text-light-green mb-1">Confirmer le mot de passe</label>
                             <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmez votre mot de passe" required
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900">
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green">
                         </div>
                     </div>
                 </form>
@@ -125,12 +125,12 @@
 
             <!-- Bouton fixe -->
             <button type="submit"
-                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-white hover:outline hover:outline-2 hover:text-gray-900 hover:outline-gray-900 transition-colors font-semibold mt-4">
+                class="w-3/4 self-center bg-light-green text-white py-2 rounded-lg hover:bg-white hover:outline hover:outline-2 hover:text-light-green hover:outline-light-green transition-colors font-semibold mt-4">
                 S'inscrire
             </button>
 
             <p class="text-center text-sm text-gray-500 mt-4">
-                Déjà un compte ? <a href="<?= base_url('auth/login') ?>" class="text-gray-900 font-semibold hover:underline">Se connecter</a>
+                Déjà un compte ? <a href="<?= base_url('auth/login') ?>" class="text-light-green font-semibold hover:underline">Se connecter</a> ou allez à la page <a href="<?= base_url('/') ?>" class="text-light-green font-semibold hover:underline">Accueil</a>
             </p>
         </div>
 
@@ -149,8 +149,8 @@
             <div class="relative z-10 p-6 text-white transform transition-transform duration-700 ease-out
         group-hover:rotate-1 group-hover:skew-y-1 group-hover:scale-105">
 
-                <img src="<?= base_url('img/logo.svg') ?>" alt="Logo"
-                    class="w-20 h-20 mb-4 transform transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110">
+                <img src="<?= base_url('img/Logo 1.png') ?>" alt="Logo"
+                    class="w-16 h-16 mb-4 transform transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110">
 
                 <h2 class="text-2xl font-bold mb-2 animate-fadeUp opacity-0">Docslot</h2>
                 <p class="text-sm animate-fadeUp opacity-0">Votre gestionnaire de rendez-vous médical</p>
@@ -162,9 +162,9 @@
                 <!-- Carte animée -->
                 <div class="bg-white rounded-xl mt-10 py-4 px-5 text-gray-900 shadow-lg transform transition-all duration-700
             hover:scale-110 hover:-rotate-2 animate-fadeUp opacity-0">
-                    <h3 class="text-lg font-semibold">Prenez un rendez-vous en quelques clics</h3>
-                    <p class="text-sm mt-1">Gérez vos consultations médicales facilement et rapidement grâce à notre système simplifié</p>
-                    <p class="text-sm text-end font-bold text-gray-700 mt-2 tracking-wide">REJOIGNEZ-NOUS 🩺</p>
+                    <h3 class="text-lg text-light-green font-semibold">Obtenez un rendez-vous facilement sans vous déplacer</h3>
+                    <p class="text-sm mt-1">Organiser un rendez-vous médicale sans effort, directement depuis votre compte dans notre cabinet.</p>
+                    <p class="text-sm text-end font-bold text-light-green mt-2 tracking-wide">REJOIGNEZ-NOUS</p>
                 </div>
             </div>
         </div>

@@ -4,9 +4,9 @@ $current = service('uri')->getSegment(2); // Segment 2 correspond à la page apr
 
 <aside class="w-60 mt-2 h-[94vh] justify-between mx-2 px-5 bg-light-green/5 rounded-lg flex flex-col">
     <!-- Logo -->
-    <div class="flex items-center">
-        <img src="<?= base_url('img/logo.svg') ?>" class="w-12 h-12" alt="">
-        <p class="font-bold text-black">Docslot</p>
+    <div class="flex items-end my-2">
+        <img src="<?= base_url('img/Logo 1.png') ?>" class="w-8 h-8" alt="">
+        <p class="font-bold text-black text-lg ml-2">Docslot</p>
     </div>
 
     <!-- Menu -->

@@ -15,6 +15,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
+                    <img src="<?=base_url('img/Logo 1.png')?>" alt="" class="h-10 w-10 mr-5">
                     <a href="#hero" class="cursor-pointer text-2xl font-bold text-dark-green tracking-wide bounce">DOCSLOT.</a>
                 </div>
                 <nav class="hidden md:flex space-x-8">

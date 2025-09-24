@@ -22,6 +22,10 @@
                         class="bg-green-800 text-white px-4 py-2 rounded duration-100 transition-colors hover:bg-green-900 mb-4 inline-block">
                         Liste des créneaux
                     </a>
+                    <a href="<?= site_url('admin/logout') ?>"
+                        class="bg-gray-900 text-white px-4 py-2 rounded duration-100 transition-colors hover:bg-gray-800 mb-4 inline-block">
+                        Deconnexion
+                    </a>
                 </div>
             </div>
 

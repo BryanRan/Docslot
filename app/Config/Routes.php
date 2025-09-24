@@ -18,6 +18,7 @@ $routes->group('patient',['filter'=>'authFilter'],function (RouteCollection $rou
     $route->get('dashboard', 'Patient\DashboardController::dashboard');
     $route->get('appointment', 'Patient\AppointmentController::appointment');
     $route->get('consult', 'Patient\ConsultationController::consult');
+    $route->post('reserver/(:num)', 'Patient\ConsultationController::reserver/$1');
     $route->get('doctor', 'Patient\DoctorController::doctor');
     $route->get('profile', 'Patient\ProfileController::profile');
     $route->post('changePassword', 'Patient\ProfileController::changePassword'); // Ajout de la route POST
@@ -35,7 +36,7 @@ $routes->group('admin', function ($routes) {
     $routes->group('', ['filter' => 'adminAuth'], function ($routes) {
         // Dashboard
         $routes->get('dashboard', 'Admin\DashboardController::index');
-        $routes->get('rendezvous/update/(:num)/(:alpha)', 'Admin\DashboardController::updateStatus/$1/$2');
+        $routes->post('updateStatus/(:num)', 'Admin\DashboardController::updateStatus/$1');
 
         // Gestion des créneaux
         $routes->get('creneaux/index', 'Admin\CreneauxController::index');

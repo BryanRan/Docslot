@@ -37,34 +37,38 @@
         <script src="<?= base_url('js/alert.js') ?>"></script>
     <?php endif; ?>
 
-    <div class="w-full mx-52 rounded-lg bg-white p-8 flex justify-between shadow-2xl overflow-hidden">
+    <div class="w-full mx-52 rounded-lg bg-white p-8 flex justify-between shadow-2xl shadow-light-green/15 overflow-hidden">
         <!-- Form -->
         <div class="h-[32rem] w-[23rem] animate-fadeLeft opacity-0">
-            <img src="<?= base_url('img/logo.svg') ?>" alt="Logo" class="w-24 h-24 animate-scale opacity-0">
-            <a href="<?= base_url('/') ?>" class="font-bold text-lg pl-7 animate-fadeUp opacity-0">Docslot</a>
-            <h2 class="mt-3 font-bold text-3xl pl-7 animate-fadeUp opacity-0">Connexion</h2>
+            <img src="<?= base_url('img/Logo 1.png') ?>" alt="" class="h-16 w-16 ml-7">
+            <h2 class="mt-3 font-bold text-3xl text-light-green pl-7 animate-fadeUp opacity-0">Connexion</h2>
 
             <form method="POST" class="space-y-4 mt-10 pl-7 animate-fadeUp opacity-0">
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <label for="email" class="block text-sm font-medium text-light-green mb-1">Email</label>
                     <input type="email" id="email" name="email" placeholder="votre email"
-                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition-transform duration-300 hover:scale-105">
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green transition-transform duration-300 hover:scale-105">
                 </div>
                 <div>
-                    <label for="mot_de_passe" class="block text-sm font-medium text-gray-700 mb-1">Mot de passe</label>
+                    <label for="mot_de_passe" class="block text-sm font-medium text-light-green mb-1">Mot de passe</label>
                     <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="votre mot de passe"
-                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition-transform duration-300 hover:scale-105">
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green transition-transform duration-300 hover:scale-105">
                 </div>
 
                 <button type="submit"
-                    class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-white hover:outline hover:outline-2 hover:text-gray-900 hover:outline-black transition-all duration-300 font-semibold transform hover:scale-105 active:scale-95 shadow-md">
+                    class="w-full bg-light-green text-white py-2 rounded-lg hover:bg-white hover:outline hover:outline-2 hover:text-light-green hover:outline-light-green transition-all duration-300 font-semibold transform shadow-md">
                     Se connecter
                 </button>
             </form>
 
             <p class="text-center text-sm text-gray-500 mt-4 animate-fadeUp opacity-0">
                 Pas de compte ? <a href="<?= base_url('auth/signup') ?>"
-                    class="text-gray-900 font-semibold hover:underline">S'inscrire</a>
+                    class="text-light-green font-semibold hover:underline">S'inscrire</a>
+            </p>
+            <hr class="mt-6 ml-6">
+            <p class="text-center text-sm text-gray-500 mt-4 animate-fadeUp opacity-0">
+                Revenir à l'écran <a href="<?= base_url('/') ?>"
+                    class="text-light-green font-semibold hover:underline">d'accueil</a>
             </p>
         </div>
 
@@ -83,8 +87,8 @@
             <div class="relative z-10 p-6 text-white transform transition-transform duration-700 ease-out
         group-hover:rotate-1 group-hover:skew-y-1 group-hover:scale-105">
 
-                <img src="<?= base_url('img/logo.svg') ?>" alt="Logo"
-                    class="w-20 h-20 mb-4 transform transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110">
+                <img src="<?= base_url('img/Logo 1.png') ?>" alt="Logo"
+                    class="w-16 h-16 mb-4 transform transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110">
 
                 <h2 class="text-2xl font-bold mb-2 animate-fadeUp opacity-0">Docslot</h2>
                 <p class="text-sm animate-fadeUp opacity-0">Votre gestionnaire de rendez-vous médical</p>
@@ -94,11 +98,11 @@
                 </p>
 
                 <!-- Carte animée -->
-                <div class="bg-white rounded-xl mt-10 py-4 px-5 text-gray-900 shadow-lg transform transition-all duration-700
+                <div class="bg-white rounded-xl mt-16 py-4 px-5 text-gray-900 shadow-lg transform transition-all duration-700
             hover:scale-110 hover:-rotate-2 animate-fadeUp opacity-0">
-                    <h3 class="text-lg font-semibold">Prenez un rendez-vous en quelques clics</h3>
+                    <h3 class="text-lg text-light-green font-semibold">Prenez un rendez-vous en quelques clics</h3>
                     <p class="text-sm mt-1">Gérez vos consultations médicales facilement et rapidement grâce à notre système simplifié</p>
-                    <p class="text-sm text-end font-bold text-gray-700 mt-2 tracking-wide">REJOIGNEZ-NOUS 🩺</p>
+                    <p class="text-sm text-end font-bold text-light-green mt-2 tracking-wide">REJOIGNEZ-NOUS</p>
                 </div>
             </div>
         </div>

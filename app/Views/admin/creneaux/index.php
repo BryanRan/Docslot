@@ -20,6 +20,10 @@
                     class="bg-green-800 text-white px-4 py-2 rounded duration-100 transition-colors hover:bg-dark-green mb-4 inline-block">
                     Liste des médecins
                 </a>
+                <a href="<?= site_url('admin/logout') ?>"
+                    class="bg-gray-900 text-white px-4 py-2 rounded duration-100 transition-colors hover:bg-gray-800 mb-4 inline-block">
+                    Deconnexion
+                </a>
             </div>
         </div>
 
