@@ -43,7 +43,7 @@
     </div>
 
     <!-- Historique et créneaux -->
-    <div class="mt-5 flex w-full mb-5 justify-between space-x-4">
+    <div class="mt-5 flex w-full mb-5 space-x-4">
         <!-- Créneaux -->
         <div class="bg-white shadow-sm rounded-md flex items-center flex-col opacity-0 transform translate-y-5 transition-all duration-500 delay-400">
             <div class="border-b-[1px] border-b-gray-300 px-16 py-3">
@@ -57,21 +57,10 @@
         </div>
 
         <!-- Historique -->
-        <div class="rounded-md bg-white shadow-sm opacity-0 transform translate-y-5 transition-all duration-500 delay-500">
+        <div class="rounded-md w-[60vw] bg-white shadow-sm opacity-0 transform translate-y-5 transition-all duration-500 delay-500">
             <div class="border-b w-full flex items-center justify-between border-b-gray-300 py-2 px-6">
                 <h2 class="text-xl font-medium mr-16">Historique de rendez-vous</h2>
-                <form method="GET" action="<?= base_url('patient/history') ?>" class="flex items-center space-x-2">
-                    <select name="status" class="border rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-light-green">
-                        <option value="">Tous les statuts</option>
-                        <option value="confirmed" <?= (service('request')->getGet('status') == 'confirmed') ? 'selected' : '' ?>>Confirmés</option>
-                        <option value="cancelled" <?= (service('request')->getGet('status') == 'cancelled') ? 'selected' : '' ?>>Annulés</option>
-                        <option value="pending" <?= (service('request')->getGet('status') == 'pending') ? 'selected' : '' ?>>En attente</option>
-                    </select>
-                    <button type="submit" class="ml-2 p-2 text-gray-500 hover:text-dark-green transition flex items-center">
-                        <i class="mdi mdi-filter-variant text-xl"></i>
-                        <span class="ml-1 hidden sm:inline text-sm">Filtrer</span>
-                    </button>
-                </form>
+                
             </div>
             <div class="overflow-x-auto">
                 <table class="w-full text-sm text-left">

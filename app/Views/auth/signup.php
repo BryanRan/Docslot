@@ -120,14 +120,13 @@
                                 class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-light-green focus:border-light-green">
                         </div>
                     </div>
+                    <!-- Bouton fixe -->
+                    <button type="submit"
+                        class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-white hover:outline hover:outline-2 hover:text-gray-900 hover:outline-gray-900 transition-colors font-semibold mt-4">
+                        S'inscrire
+                    </button>
                 </form>
             </div>
-
-            <!-- Bouton fixe -->
-            <button type="submit"
-                class="w-3/4 self-center bg-light-green text-white py-2 rounded-lg hover:bg-white hover:outline hover:outline-2 hover:text-light-green hover:outline-light-green transition-colors font-semibold mt-4">
-                S'inscrire
-            </button>
 
             <p class="text-center text-sm text-gray-500 mt-4">
                 Déjà un compte ? <a href="<?= base_url('auth/login') ?>" class="text-light-green font-semibold hover:underline">Se connecter</a> ou allez à la page <a href="<?= base_url('/') ?>" class="text-light-green font-semibold hover:underline">Accueil</a>
