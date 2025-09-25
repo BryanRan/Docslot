@@ -67,7 +67,7 @@ class CreneauxController extends BaseController
         ]);
 
         return redirect()->to(base_url('admin/creneaux/index'))
-            ->with('success', '✅ Créneau ajouté avec succès.');
+            ->with('success', 'Créneau ajouté avec succès.');
     }
 
 

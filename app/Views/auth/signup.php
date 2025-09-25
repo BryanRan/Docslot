@@ -122,7 +122,7 @@
                     </div>
                     <!-- Bouton fixe -->
                     <button type="submit"
-                        class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-white hover:outline hover:outline-2 hover:text-gray-900 hover:outline-gray-900 transition-colors font-semibold mt-4">
+                        class="w-full bg-light-green text-white py-2 mb-3 rounded-lg hover:bg-white hover:outline hover:outline-2 hover:text-light-green hover:outline-light-green transition-colors font-semibold mt-4">
                         S'inscrire
                     </button>
                 </form>

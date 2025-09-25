@@ -29,7 +29,7 @@ $current = service('uri')->getSegment(2); // Segment 2 correspond à la page apr
                     class="font-regular mt-2 text-start px-5 py-2 w-full rounded-md 
                     <?= ($current == 'appointment') ? 'bg-gradient-to-r from-dark-green to-light-green text-white shadow shadow-dark-green/35' : 'hover:bg-light-green/70 hover:text-white/50 text-neutral-500' ?>">
                     <i class="mdi mdi-calendar-blank-outline mr-2"></i>
-                    Mes rendez-vous
+                    Rendez-vous
                 </button>
             </a>
 
