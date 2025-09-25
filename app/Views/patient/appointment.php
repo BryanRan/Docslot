@@ -102,15 +102,15 @@ $rendezvous = [
                             </div>
 
                             <!-- Colonne centre : Médecin + Sujet -->
-                            <div class="flex flex-col text-left gap-2">
+                            <div class=" flex flex-col text-left gap-2">
                                 <div class="flex">
-                                    <span class="w-24 font-semibold text-light-green">Médecin :</span>
+                                    <span class="w-24 font-semibold text-light-green ">Médecin </span>
                                     <span class="text-gray-600 font-semibold">
                                         Dr. <?= esc($rdv['medecin_nom']) ?> <?= esc($rdv['medecin_prenom']) ?> (<?= esc($rdv['specialite']) ?>)
                                     </span>
                                 </div>
                                 <div class="flex">
-                                    <span class="w-24 font-semibold text-light-green">Sujet :</span>
+                                    <span class="w-24 font-semibold text-light-green">Sujet </span>
                                     <span class="text-gray-600 font-semibold"><?= esc($rdv['sujet']) ?></span>
                                 </div>
                             </div>
