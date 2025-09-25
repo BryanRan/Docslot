@@ -5,6 +5,7 @@
 <div id="dashboard" class="w-full my-2 px-5 bg-light-green/5 rounded-lg flex flex-col opacity-0 translate-y-5 transition-all duration-500 ease-out">
 
 
+
     <!-- Flash messages -->
     <?php if (session()->getFlashdata('success')): ?>
         <div class="mb-4 p-4 flex items-center gap-2 rounded-lg bg-green-50 border border-green-200 text-green-800 shadow-sm">
@@ -22,16 +23,23 @@
 
     <!-- Header -->
     <div class="flex items-start justify-between mt-3 opacity-0 transform translate-y-5 transition-all duration-500 delay-100">
+    <!-- Header -->
+    <div class="flex items-start justify-between mt-3 opacity-0 transform translate-y-5 transition-all duration-500 delay-100">
         <div>
+            <h1 class="text-2xl font-bold text-gray-800">Créneaux</h1>
+            <p class="text-gray-500">Consultez les créneaux disponibles dans notre cabinet.</p>
             <h1 class="text-2xl font-bold text-gray-800">Créneaux</h1>
             <p class="text-gray-500">Consultez les créneaux disponibles dans notre cabinet.</p>
         </div>
 
         <button class="py-1 mt-2 font-medium px-3 rounded-md bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800 shadow-sm transition">
+        <button class="py-1 mt-2 font-medium px-3 rounded-md bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800 shadow-sm transition">
             <i class="mdi mdi-refresh mr-1"></i>Actualiser
         </button>
     </div>
 
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
     <!-- Cards -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         <?php foreach ($creneaux as $c): ?>
@@ -68,6 +76,19 @@
                         </span>
                     </p>
 
+                    <!-- Bouton -->
+                    <?php if ($c['statut'] === 'disponible'): ?>
+                        <form action="<?= base_url('patient/reserver/' . $c['id']) ?>" method="POST" class="w-full">
+                            <button type="submit" class="mt-4 w-full bg-dark-green text-white px-4 py-2 rounded-lg hover:bg-green-700 transition font-medium shadow-sm">
+                                Réserver
+                            </button>
+                        </form>
+                    <?php else: ?>
+                        <button disabled class="mt-4 w-full bg-gray-400 text-white px-4 py-2 rounded-lg font-medium shadow-sm">
+                            Indisponible
+                        </button>
+                    <?php endif; ?>
+                </div>
                     <!-- Bouton -->
                     <?php if ($c['statut'] === 'disponible'): ?>
                         <form action="<?= base_url('patient/reserver/' . $c['id']) ?>" method="POST" class="w-full">
