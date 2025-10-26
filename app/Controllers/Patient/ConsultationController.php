@@ -36,14 +36,16 @@ class ConsultationController extends BaseController
             return redirect()->back();
         }
 
+        $sujet = $this->request->getPost();
+
         $rendezvousModel = new RendezvousModel();
         $rendezvousModel->insert([
             'id_utilisateur' => $idUtilisateur,
             'id_creneau'     => $idCreneau,
-            'statut'         => 'en_attente'
+            'statut'         => 'en_attente',
+            'sujet'          => $sujet
         ]);
 
-        // Option : occuper le créneau immédiatement
         $creneauxModel->update($idCreneau, ['statut' => 'occupé']);
 
         $session->setFlashdata('success', 'Votre rendez-vous est en attente de validation.');

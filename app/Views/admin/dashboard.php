@@ -45,6 +45,7 @@
                     <th class="p-2">Nom du patient</th>
                     <th class="p-2">Date du RDV</th>
                     <th class="p-2">Heure</th>
+                    <th class="p-2">Sujet</th>
                     <th class="p-2">Statut</th>
                     <th class="p-2">Action</th>
                 </tr>
@@ -55,6 +56,7 @@
                         <td class="p-2"><?= esc($rdv['nom'] . ' ' . $rdv['prenom']) ?></td>
                         <td class="p-2"><?= esc($rdv['date']) ?></td>
                         <td class="p-2"><?= esc($rdv['heure_debut']) ?> - <?= esc($rdv['heure_fin']) ?></td>
+                        <td class="p-2"><?=esc($rdv['sujet'])?></td>
                         <td class="p-2">
                             <span class="px-2 py-1 text-sm rounded 
                             <?= $rdv['statut'] === 'validé' ? 'bg-green-100 text-green-800' : ($rdv['statut'] === 'refusé' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800') ?>">

@@ -33,6 +33,11 @@ class DashboardController extends BaseController
             ->where('rendezvous.id_utilisateur', $userId)
             ->first();
 
+        $data['annulation'] = $rdv
+            ->where('id_utilisateur', $userId)
+            ->where('statut', 'annulé')
+            ->countAllResults();
+
         $data['listeCreneaux'] = $cr
             ->select('creneaux.date as cr_date,creneaux.heure_debut as cr_hd,creneaux.heure_fin,creneaux.medecin_id,medecins.id,medecins.nom as nom_medecin')
             ->join('medecins', 'creneaux.medecin_id = medecins.id')
@@ -40,7 +45,7 @@ class DashboardController extends BaseController
             ->findAll();
 
         $data['historique'] = $rdv
-            ->select('rendezvous.id,rendezvous.statut as rd_statut, creneaux.date as date, creneaux.heure_debut as cr_d, creneaux.heure_fin as cr_f,creneaux.medecin_id ,medecins.id,medecins.nom as nom_medecin,medecins.prenom as prenom_medecin,medecins.specialite as spec_medecin')
+            ->select('rendezvous.id,rendezvous.statut as rd_statut,rendezvous.sujet as subject, creneaux.date as date, creneaux.heure_debut as cr_d, creneaux.heure_fin as cr_f,creneaux.medecin_id ,medecins.id,medecins.nom as nom_medecin,medecins.prenom as prenom_medecin,medecins.specialite as spec_medecin')
             ->join('creneaux', 'creneaux.id = rendezvous.id_creneau')
             ->join('medecins', 'creneaux.medecin_id = medecins.id')
             ->where('rendezvous.id_utilisateur', $userId)

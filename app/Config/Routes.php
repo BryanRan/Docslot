@@ -17,7 +17,10 @@ $routes->group('auth', function( RouteCollection $route) {
 $routes->group('patient',['filter'=>'authFilter'],function (RouteCollection $route) {
     $route->get('dashboard', 'Patient\DashboardController::dashboard');
     $route->get('appointment', 'Patient\AppointmentController::appointment');
+    $route->post('appointment/annuler/(:num)', 'Patient\AppointmentController::annulerRDV/$1');
+    
     $route->get('consult', 'Patient\ConsultationController::consult');
+    $route->get('consult/(:num)', 'Patient\ConsultationController::consult/$1');
     $route->post('reserver/(:num)', 'Patient\ConsultationController::reserver/$1');
     $route->get('doctor', 'Patient\DoctorController::doctor');
     $route->get('profile', 'Patient\ProfileController::profile');
@@ -27,12 +30,10 @@ $routes->group('patient',['filter'=>'authFilter'],function (RouteCollection $rou
 });
 
 $routes->group('admin', function ($routes) {
-    // 🔓 Auth publique
     $routes->get('login', 'AdminAuthController::login');
     $routes->post('login', 'AdminAuthController::attemptLogin');
     $routes->get('logout', 'AdminAuthController::logout');
 
-    // 🔐 Zone protégée
     $routes->group('', ['filter' => 'adminAuth'], function ($routes) {
         // Dashboard
         $routes->get('dashboard', 'Admin\DashboardController::index');

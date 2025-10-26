@@ -23,7 +23,7 @@
         $cards = [
             ['title' => 'Demande(s) effectuée(s)', 'icon' => 'mdi-calendar-blank', 'count' => $totalRdv, 'color' => 'dark-green', 'bg' => 'bg-light-green/20'],
             ['title' => 'Demande(s) en attente', 'icon' => 'mdi-clock-time-three-outline', 'count' => $rdvEnAttente, 'color' => 'blue-200', 'bg' => 'bg-blue-100'],
-            ['title' => 'Rendez-vous annulé(s)', 'icon' => 'mdi-close', 'count' => 3, 'color' => 'red-500', 'bg' => 'bg-red-100'],
+            ['title' => 'Rendez-vous annulé(s)', 'icon' => 'mdi-close', 'count' => $annulation, 'color' => 'red-500', 'bg' => 'bg-red-100'],
             ['title' => 'Rappel', 'icon' => 'mdi-bell-ring-outline', 'count' => null, 'color' => 'dark-green', 'bg' => 'bg-yellow-100'],
         ];
         foreach ($cards as $i => $card): ?>
@@ -78,13 +78,13 @@
                 <?php if (!empty($listeCreneaux)): ?>
                     <ul class="w-full">
                         <?php foreach ($listeCreneaux as $c): ?>
-                            <li class="flex justify-between items-center border-b border-gray-200 py-2 px-4 hover:bg-gray-50 transition">
-                                <span class="font-medium">Dr. <?= esc($c['nom_medecin']) ?></span>
+                            <a href="<?= base_url('patient/consult')?>" class="flex justify-between items-center border-b border-gray-200 py-2 px-4 hover:bg-gray-50 transition">
+                                <span class="font-medium text-sm">Dr. <?= esc($c['nom_medecin']) ?></span>
                                 <span class="text-gray-600 text-sm">
-                                    <?= date('d/m/Y', strtotime($c['cr_date'])) ?>
+                                    <?= date('d/m', strtotime($c['cr_date'])) ?>
                                     - <?= date('H:i', strtotime($c['cr_hd'])) ?> à <?= date('H:i', strtotime($c['heure_fin'])) ?>
                                 </span>
-                            </li>
+                            </a>
                         <?php endforeach; ?>
                     </ul>
                 <?php else: ?>
@@ -107,7 +107,7 @@
         <div class="rounded-md w-[50vw] bg-white shadow-sm opacity-0 transform translate-y-5 transition-all duration-500 delay-500">
             <div class="border-b w-full flex items-center justify-between border-b-gray-300 py-2 px-6">
                 <h2 class="text-xl font-medium mr-16">Historique de rendez-vous</h2>
-                <a href="<?=base_url('patient/appointment')?>" class="font-medium hover:text-light-green transition-colors duration-100">Voir tous les rendez-vous <i class="mdi mdi-arrow-right"></i></a>
+                <a href="<?= base_url('patient/appointment') ?>" class="font-medium hover:text-light-green transition-colors duration-100">Voir tous les rendez-vous <i class="mdi mdi-arrow-right"></i></a>
             </div>
 
             <div class="overflow-x-auto">
@@ -119,6 +119,7 @@
                             <th class="px-6 py-3">Fin</th>
                             <th class="px-6 py-3">Docteur</th>
                             <th class="px-6 py-3">Spécialité</th>
+                            <th class="px-6 py-3">Sujet</th>
                             <th class="px-6 py-3">Statut</th>
                         </tr>
                     </thead>
@@ -126,17 +127,18 @@
                         <?php if (!empty($historique) && is_array($historique)): ?>
                             <?php foreach ($historique as $i => $appointment): ?>
                                 <tr>
-                                    <td class="px-4 py-2 text-sm font-medium text-gray-700"><?= esc($appointment['date']) ?></td>
+                                    <td class="px-4 py-2 text-sm font-medium text-gray-700"><?= date('d/m', strtotime($appointment['date'])) ?></td>
                                     <td class="px-4 py-2 text-sm text-gray-600"><?= esc($appointment['cr_d']) ?></td>
                                     <td class="px-4 py-2 text-sm text-gray-600"><?= esc($appointment['cr_f']) ?></td>
                                     <td class="px-4 py-2 text-sm font-semibold text-gray-800">
                                         Dr. <?= esc($appointment['nom_medecin']) ?> <?= esc($appointment['prenom_medecin']) ?>
                                     </td>
                                     <td class="px-4 py-2 text-sm text-blue-600 font-medium"><?= esc($appointment['spec_medecin']) ?></td>
+                                    <td class="px-4 py-2 text-sm text-blue-600 font-medium"><?= esc($appointment['subject']) ?></td>
                                     <td class="px-4 py-2 text-sm">
                                         <span class="px-3 py-1 rounded-full text-xs font-semibold
                                         <?= $appointment['rd_statut'] === 'validé' ? 'bg-green-100 text-green-700' : ($appointment['rd_statut'] === 'annulé' ? 'bg-yellow-100 text-yellow-700' :
-                                        'bg-red-100 text-red-700') ?>">
+                                            'bg-red-100 text-red-700') ?>">
                                             <?= esc($appointment['rd_statut']) ?>
                                         </span>
                                     </td>
